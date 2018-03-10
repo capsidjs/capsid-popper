@@ -1,5 +1,8 @@
 # capsid-popper v1.0.0
 
+[![CircleCI](https://circleci.com/gh/capsidjs/capsid-popper.svg?style=svg)](https://circleci.com/gh/capsidjs/capsid-popper)
+[![codecov](https://codecov.io/gh/capsidjs/capsid-popper/branch/master/graph/badge.svg)](https://codecov.io/gh/capsidjs/capsid-popper)
+
 > [capsid][] component for [popper][]
 
 peer dependency: capsid >= 0.19
