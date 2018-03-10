@@ -1,7 +1,7 @@
 {
   "name": "capsid-popper",
   "version": "0.1.0",
-  "description": "capsid component for popper layout",
+  "description": "capsid component for popper.js",
   "main": "index.js",
   "scripts": {
     "test": "karma start",
@@ -22,6 +22,10 @@
     "url": "https://github.com/capsidjs/capsid-popper/issues"
   },
   "homepage": "https://github.com/capsidjs/capsid-popper#readme",
+  "peerDependencies": {
+    "capsid": ">=0.20.2",
+    "popper.js": "^1.12.9"
+  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-plugin-istanbul": "^4.1.5",

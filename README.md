@@ -6,13 +6,39 @@ peer dependency: capsid >= 0.19
 
 # Install
 
-    npm install capsid-popper capsid
+    npm install --save capsid-popper capsid popper.js
 
 # Usage
+
+Install the module to capsid:
 
 ```js
 capsid.install(require('capsid-popper'))
 ```
+
+Then place `popper` component:
+
+```html
+<div class="popper" data-popper-placement="left" data-popper-ref="#target">...</div>
+```
+
+This element works as a popper to the reference element with the given placement.
+
+See [popper document][popper] for available placements.
+
+# Options
+
+Some install options are available.
+
+```js
+capsid.install(require('capsid-popper'), { name: 'name-of-popper-component' })
+```
+
+`name` property specifies the name of the component. Default `popper`. For example, if you pass `{ name: 'my-popper' }`, your popper component should be `<div class="my-popper" ...></div>`.
+
+# License
+
+MIT
 
 [capsid]: https://capsid.js.org
 [popper]: https://popper.js.org
