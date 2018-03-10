@@ -1,0 +1,49 @@
+{
+  "name": "capsid-popper",
+  "version": "0.1.0",
+  "description": "capsid component for popper layout",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start",
+    "lint": "standard",
+    "codecov": "npm test && codecov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/capsidjs/capsid-popper.git"
+  },
+  "keywords": [
+    "capsid",
+    "popper"
+  ],
+  "author": "Yoshiya Hinosawa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/capsidjs/capsid-popper/issues"
+  },
+  "homepage": "https://github.com/capsidjs/capsid-popper#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-istanbul": "^4.1.5",
+    "babelify": "^8.0.0",
+    "browserify": "^16.1.1",
+    "capsid": "^0.20.1",
+    "codecov": "^3.0.0",
+    "genel": "^1.1.1",
+    "karma": "^2.0.0",
+    "karma-browserify": "^5.2.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-coverage": "^1.1.1",
+    "karma-kocha": "^1.9.1",
+    "kocha": "^1.9.1",
+    "nyc": "^11.4.1",
+    "popper.js": "^1.12.9",
+    "standard": "^11.0.0"
+  },
+  "nyc": {
+    "reporter": [
+      "text",
+      "lcov"
+    ]
+  }
+}
