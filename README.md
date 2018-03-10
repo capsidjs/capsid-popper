@@ -1,4 +1,4 @@
-# capsid-popper v0.1.0
+# capsid-popper v1.0.0
 
 > [capsid][] component for [popper][]
 
