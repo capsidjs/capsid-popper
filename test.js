@@ -55,12 +55,29 @@ describe('capsid-popper', () => {
       document.body.appendChild(el)
 
       el.dataset.popperRef = 'p'
-
       el.dataset.popperPlacement = 'bottom'
 
       capsid.make('popper', el)
 
-      assert.strictEqual(el.getAttribute('x-placement'), 'bottom')
+      assert.strictEqual(el.getAttribute('x-placement'), 'bottom') // popper put this attribute
+    })
+
+    it('removes display none property if set', () => {
+      const p = genel.p``
+
+      document.body.appendChild(p)
+
+      const el = genel.div``
+
+      document.body.appendChild(el)
+
+      el.dataset.popperRef = 'p'
+      el.dataset.popperPlacement = 'bottom'
+      el.style.display = 'none'
+
+      capsid.make('popper', el)
+
+      assert.strictEqual(el.style.display, '')
     })
   })
 })
