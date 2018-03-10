@@ -2,10 +2,13 @@
   "name": "capsid-popper",
   "version": "0.1.0",
   "description": "capsid component for popper.js",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "source": "index.js",
+  "files": "dist",
   "scripts": {
     "test": "karma start",
     "lint": "standard",
+    "dist": "microbundle",
     "codecov": "npm test && codecov"
   },
   "repository": {
@@ -40,6 +43,7 @@
     "karma-coverage": "^1.1.1",
     "karma-kocha": "^1.9.1",
     "kocha": "^1.9.1",
+    "microbundle": "^0.4.4",
     "nyc": "^11.4.1",
     "popper.js": "^1.12.9",
     "standard": "^11.0.0"
