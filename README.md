@@ -5,7 +5,7 @@
 
 > [capsid][] component for [popper][]
 
-peer dependency: capsid >= 0.19
+peer dependency: capsid >= 0.20.2, popper.js ^1.12.9
 
 # Install
 
