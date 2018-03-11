@@ -39,6 +39,11 @@ exports.install = (capsid, { name } = {}) => {
         this.el.style.display = ''
       }
     }
+
+    @capsid.on('popper-update')
+    update () {
+      this.popper.scheduleUpdate()
+    }
   }
 
   capsid.def(name, PopperComponent)

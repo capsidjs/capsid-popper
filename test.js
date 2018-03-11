@@ -79,5 +79,26 @@ describe('capsid-popper', () => {
 
       assert.strictEqual(el.style.display, '')
     })
+
+    describe('update', () => {
+      it('updates the popper layout', () => {
+        const p = genel.p``
+
+        document.body.appendChild(p)
+
+        const el = genel.div``
+
+        document.body.appendChild(el)
+
+        el.dataset.popperRef = 'p'
+        el.dataset.popperPlacement = 'top'
+        el.style.display = 'none'
+
+        const popper = capsid.make('popper', el)
+
+        popper.update()
+        // TODO: assert something
+      })
+    })
   })
 })

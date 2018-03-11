@@ -1,2 +1,0 @@
-var e=require("popper.js");exports.install=function(p,t){void 0===t&&(t={});var r=t.name;r=r||"popper";var o=function(){};o.prototype.__init__=function(){var p=this.el.dataset,t=p.popperRef,r=p.popperPlacement,o=(this.el.parentElement||document).querySelector(t);if(!o)throw new Error('popper reference not found: data-popper-ref="'+t+'"');if(!r)throw new Error('popper placement is not specified: data-popper-placement="'+r+'"');this.popper=new e(o,this.el,{placement:r}),"none"===this.el.style.display&&(this.el.style.display="")},p.def(r,o)};
-//# sourceMappingURL=index.m.js.map

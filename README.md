@@ -39,6 +39,20 @@ capsid.install(require('capsid-popper'), { name: 'name-of-popper-component' })
 
 `name` property specifies the name of the component. Default `popper`. For example, if you pass `{ name: 'my-popper' }`, your popper component should be `<div class="my-popper" ...></div>`.
 
+# Events
+
+## `popper-update`
+
+Dispatching `popper-update` event on `popper` components causes the update of the position calculation:
+
+```
+document.querySelectorAll('.popper').forEach(el => {
+  el.dispatchEvent(new CustomEvent('popper-update'))
+})
+```
+
+The above example updates all the popper components' layouts.
+
 # License
 
 MIT
