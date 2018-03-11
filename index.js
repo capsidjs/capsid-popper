@@ -31,7 +31,9 @@ exports.install = (capsid, { name } = {}) => {
         throw new Error(`popper placement is not specified: data-popper-placement="${popperPlacement}"`)
       }
 
-      this.popper = new Popper(ref, this.el, popperPlacement)
+      this.popper = new Popper(ref, this.el, {
+        placement: popperPlacement
+      })
 
       if (this.el.style.display === 'none') {
         this.el.style.display = ''
