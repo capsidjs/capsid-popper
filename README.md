@@ -1,4 +1,4 @@
-# capsid-popper v1.1.0
+# capsid-popper v1.1.1
 
 [![CircleCI](https://circleci.com/gh/capsidjs/capsid-popper.svg?style=svg)](https://circleci.com/gh/capsidjs/capsid-popper)
 [![codecov](https://codecov.io/gh/capsidjs/capsid-popper/branch/master/graph/badge.svg)](https://codecov.io/gh/capsidjs/capsid-popper)
