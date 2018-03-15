@@ -35,6 +35,8 @@ var Popper = require('popper.js');
 
 var UPDATE = 'update-popper';
 
+var componentName = void 0;
+
 /**
  * @param {Capsid} capsid The capsid object
  * @param {string} [name] The name of the component. Default `popper`
@@ -45,7 +47,7 @@ exports.install = function (capsid) {
   var _ref = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},
       name = _ref.name;
 
-  name = name || 'popper';
+  componentName = name || 'popper';
 
   /**
    * Popper component
@@ -95,7 +97,7 @@ exports.install = function (capsid) {
   }(), (_applyDecoratedDescriptor(_class.prototype, 'update', [_dec], Object.getOwnPropertyDescriptor(_class.prototype, 'update'), _class.prototype)), _class));
 
 
-  capsid.def(name, PopperComponent);
+  capsid.def(componentName, PopperComponent);
 };
 
 exports.UPDATE = UPDATE;
@@ -104,7 +106,7 @@ exports.UPDATE = UPDATE;
  * Updates all the popper components.
  */
 exports.updateAll = function () {
-  Array.prototype.forEach.call(document.querySelectorAll(''), function (el) {
+  Array.prototype.forEach.call(document.querySelectorAll('.' + componentName), function (el) {
     el.dispatchEvent(new CustomEvent(UPDATE));
   });
 };
