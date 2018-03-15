@@ -2,12 +2,14 @@ const Popper = require('popper.js')
 
 const UPDATE = 'update-popper'
 
+let componentName
+
 /**
  * @param {Capsid} capsid The capsid object
  * @param {string} [name] The name of the component. Default `popper`
  */
 exports.install = (capsid, { name } = {}) => {
-  name = name || 'popper'
+  componentName = name || 'popper'
 
   /**
    * Popper component
@@ -48,7 +50,7 @@ exports.install = (capsid, { name } = {}) => {
     }
   }
 
-  capsid.def(name, PopperComponent)
+  capsid.def(componentName, PopperComponent)
 }
 
 exports.UPDATE = UPDATE
@@ -57,7 +59,7 @@ exports.UPDATE = UPDATE
  * Updates all the popper components.
  */
 exports.updateAll = () => {
-  Array.prototype.forEach.call(document.querySelectorAll(''), el => {
+  Array.prototype.forEach.call(document.querySelectorAll(`.${componentName}`), el => {
     el.dispatchEvent(new CustomEvent(UPDATE))
   })
 }

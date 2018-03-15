@@ -2,6 +2,7 @@ const assert = require('assert')
 const { describe, it, afterEach } = require('kocha')
 const genel = require('genel')
 const capsid = require('capsid')
+const capsidPopper = require('./index')
 
 describe('capsid-popper', () => {
   afterEach(() => {
@@ -9,7 +10,7 @@ describe('capsid-popper', () => {
   })
 
   it('can install', () => {
-    capsid.install(require('./index'))
+    capsid.install(capsidPopper)
   })
 
   describe('popper component', () => {
@@ -99,6 +100,20 @@ describe('capsid-popper', () => {
         popper.update()
         // TODO: assert something
       })
+    })
+  })
+
+  describe('updateAll', () => {
+    it('dispatches UPDATE event on .popper component', done => {
+      const el = genel.div``
+      el.classList.add('popper')
+      el.addEventListener(capsidPopper.UPDATE, () => {
+        done()
+      })
+
+      document.body.appendChild(el)
+
+      capsidPopper.updateAll()
     })
   })
 })
