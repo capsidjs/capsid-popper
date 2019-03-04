@@ -1,4 +1,4 @@
-# capsid-popper v1.3.0
+# capsid-popper v1.3.1
 
 [![CircleCI](https://circleci.com/gh/capsidjs/capsid-popper.svg?style=svg)](https://circleci.com/gh/capsidjs/capsid-popper)
 [![codecov](https://codecov.io/gh/capsidjs/capsid-popper/branch/master/graph/badge.svg)](https://codecov.io/gh/capsidjs/capsid-popper) [![Greenkeeper badge](https://badges.greenkeeper.io/capsidjs/capsid-popper.svg)](https://greenkeeper.io/)
