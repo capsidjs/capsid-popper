@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/capsidjs/capsid-popper#readme",
   "peerDependencies": {
-    "capsid": ">=0.20.2",
+    "capsid": ">=0.29.1",
     "popper.js": "^1.12.9"
   },
   "devDependencies": {
@@ -39,7 +39,7 @@
     "babel-preset-env": "^1.6.1",
     "babelify": "^8.0.0",
     "browserify": "^16.1.1",
-    "capsid": "^0.20.1",
+    "capsid": "^0.29.1",
     "codecov": "^3.0.0",
     "genel": "^1.1.1",
     "karma": "^2.0.0",

@@ -20,7 +20,7 @@ exports.install = (capsid, { name } = {}) => {
    * @see https://popper.js.org/popper-documentation.html#Popper.placements for available placements
    */
   class PopperComponent {
-    __init__ () {
+    __mount__ () {
       const { popperRef, popperPlacement } = this.el.dataset
 
       const parent = this.el.parentElement || document
