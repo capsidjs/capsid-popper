@@ -62,7 +62,7 @@ exports.install = function (capsid) {
       _classCallCheck(this, PopperComponent);
     }
 
-    PopperComponent.prototype.__init__ = function __init__() {
+    PopperComponent.prototype.__mount__ = function __mount__() {
       var _el$dataset = this.el.dataset,
           popperRef = _el$dataset.popperRef,
           popperPlacement = _el$dataset.popperPlacement;

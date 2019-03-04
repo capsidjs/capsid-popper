@@ -1,6 +1,6 @@
 {
   "name": "capsid-popper",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "description": "capsid component for popper.js",
   "main": "dist/index.js",
   "source": "index.js",
