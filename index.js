@@ -21,6 +21,10 @@ exports.install = (capsid, { name } = {}) => {
    */
   class PopperComponent {
     __mount__ () {
+      this.init()
+    }
+
+    init () {
       const { popperRef, popperPlacement } = this.el.dataset
 
       const parent = this.el.parentElement || document
@@ -46,7 +50,11 @@ exports.install = (capsid, { name } = {}) => {
 
     @capsid.on(UPDATE)
     update () {
-      this.popper.scheduleUpdate()
+      if (this.popper) {
+        this.popper.destroy()
+        this.popper = null
+      }
+      this.init()
     }
   }
 
