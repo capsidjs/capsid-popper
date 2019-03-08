@@ -62,6 +62,12 @@ exports.install = function (capsid, _temp) {
         kind: "method",
         key: "__mount__",
         value: function __mount__() {
+          this.init();
+        }
+      }, {
+        kind: "method",
+        key: "init",
+        value: function init() {
           var _this$el$dataset = this.el.dataset,
               popperRef = _this$el$dataset.popperRef,
               popperPlacement = _this$el$dataset.popperPlacement;
@@ -89,7 +95,12 @@ exports.install = function (capsid, _temp) {
         decorators: [capsid.on(UPDATE)],
         key: "update",
         value: function update() {
-          this.popper.scheduleUpdate();
+          if (this.popper) {
+            this.popper.destroy();
+            this.popper = null;
+          }
+
+          this.init();
         }
       }]
     };
