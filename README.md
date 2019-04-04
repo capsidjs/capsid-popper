@@ -1,4 +1,4 @@
-# capsid-popper v1.5.0
+# capsid-popper v1.6.0
 
 [![CircleCI](https://circleci.com/gh/capsidjs/capsid-popper.svg?style=svg)](https://circleci.com/gh/capsidjs/capsid-popper)
 [![codecov](https://codecov.io/gh/capsidjs/capsid-popper/branch/master/graph/badge.svg)](https://codecov.io/gh/capsidjs/capsid-popper)
@@ -58,6 +58,7 @@ This is useful when you want to change the ref, the placement, or any other conf
 
 # History
 
+- 2019-04-04 v1.6.0 Add `data-popper-flip`.
 - 2019-04-04 v1.5.0 Add `data-popper-prevent-overflow`.
 
 # License
