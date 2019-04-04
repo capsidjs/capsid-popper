@@ -504,15 +504,13 @@ exports.install = function(capsid, _temp) {
             var _this$el$dataset = this.el.dataset,
               popperRef = _this$el$dataset.popperRef,
               popperPlacement = _this$el$dataset.popperPlacement,
-              popperPreventOverflow = _this$el$dataset.popperPreventOverflow,
-              popperFlip = _this$el$dataset.popperFlip
+              popperModifiers = _this$el$dataset.popperModifiers
             var parent = this.el.parentElement || document
             var ref = parent.querySelector(popperRef)
-            var preventOverflow = this.parseJSON(
-              popperPreventOverflow,
-              'data-popper-prevent-over-flow'
+            var modifiers = this.parseJSON(
+              popperModifiers,
+              'data-popper-modifiers'
             )
-            var flip = this.parseJSON(popperFlip, 'data-popper-flip')
 
             if (!ref) {
               throw new Error(
@@ -532,10 +530,7 @@ exports.install = function(capsid, _temp) {
 
             this.popper = new Popper(ref, this.el, {
               placement: popperPlacement,
-              modifiers: {
-                preventOverflow: preventOverflow,
-                flip: flip
-              }
+              modifiers: modifiers
             })
 
             if (this.el.style.display === 'none') {
