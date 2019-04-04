@@ -20,11 +20,11 @@ exports.install = (capsid, { name } = {}) => {
    * @see https://popper.js.org/popper-documentation.html#Popper.placements for available placements
    */
   class PopperComponent {
-    __mount__ () {
+    __mount__() {
       this.init()
     }
 
-    init () {
+    init() {
       const { popperRef, popperPlacement } = this.el.dataset
 
       const parent = this.el.parentElement || document
@@ -32,11 +32,15 @@ exports.install = (capsid, { name } = {}) => {
       const ref = parent.querySelector(popperRef)
 
       if (!ref) {
-        throw new Error(`popper reference not found: data-popper-ref="${popperRef}"`)
+        throw new Error(
+          `popper reference not found: data-popper-ref="${popperRef}"`
+        )
       }
 
       if (!popperPlacement) {
-        throw new Error(`popper placement is not specified: data-popper-placement="${popperPlacement}"`)
+        throw new Error(
+          `popper placement is not specified: data-popper-placement="${popperPlacement}"`
+        )
       }
 
       this.popper = new Popper(ref, this.el, {
@@ -49,7 +53,7 @@ exports.install = (capsid, { name } = {}) => {
     }
 
     @capsid.on(UPDATE)
-    update () {
+    update() {
       if (this.popper) {
         this.popper.destroy()
         this.popper = null
@@ -67,7 +71,10 @@ exports.UPDATE = UPDATE
  * Updates all the popper components.
  */
 exports.updateAll = () => {
-  Array.prototype.forEach.call(document.querySelectorAll(`.${componentName}`), el => {
-    el.dispatchEvent(new CustomEvent(UPDATE))
-  })
+  Array.prototype.forEach.call(
+    document.querySelectorAll(`.${componentName}`),
+    el => {
+      el.dispatchEvent(new CustomEvent(UPDATE))
+    }
+  )
 }
