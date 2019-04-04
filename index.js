@@ -43,7 +43,8 @@ exports.install = (capsid, { name } = {}) => {
       const {
         popperRef,
         popperPlacement,
-        popperPreventOverflow
+        popperPreventOverflow,
+        popperFlip
       } = this.el.dataset
 
       const parent = this.el.parentElement || document
@@ -52,6 +53,7 @@ exports.install = (capsid, { name } = {}) => {
         popperPreventOverflow,
         'data-popper-prevent-over-flow'
       )
+      const flip = this.parseJSON(popperFlip, 'data-popper-flip')
 
       if (!ref) {
         throw new Error(
@@ -67,7 +69,7 @@ exports.install = (capsid, { name } = {}) => {
 
       this.popper = new Popper(ref, this.el, {
         placement: popperPlacement,
-        modifiers: { preventOverflow }
+        modifiers: { preventOverflow, flip }
       })
 
       if (this.el.style.display === 'none') {

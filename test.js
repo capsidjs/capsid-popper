@@ -103,6 +103,26 @@ describe('capsid-popper', () => {
       assert.strictEqual(preventOverflow.enabled, false)
     })
 
+    it('sets flip modifier based on data-popper-flip', () => {
+      const p = genel.p``
+
+      document.body.appendChild(p)
+
+      const el = genel.div``
+
+      document.body.appendChild(el)
+
+      el.dataset.popperRef = 'p'
+      el.dataset.popperPlacement = 'top'
+      el.dataset.popperFlip = '{"enabled": false}'
+
+      const popper = capsid.make('popper', el)
+
+      const flip = popper.popper.modifiers.find(m => m.name === 'flip')
+
+      assert.strictEqual(flip.enabled, false)
+    })
+
     describe('update', () => {
       it('updates the popper layout', () => {
         const p = genel.p``
