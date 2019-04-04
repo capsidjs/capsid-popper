@@ -81,6 +81,28 @@ describe('capsid-popper', () => {
       assert.strictEqual(el.style.display, '')
     })
 
+    it('sets preventOverflow modifier based on data-popper-prevent-overflow', () => {
+      const p = genel.p``
+
+      document.body.appendChild(p)
+
+      const el = genel.div``
+
+      document.body.appendChild(el)
+
+      el.dataset.popperRef = 'p'
+      el.dataset.popperPlacement = 'top'
+      el.dataset.popperPreventOverflow = '{"enabled": false}'
+
+      const popper = capsid.make('popper', el)
+
+      const preventOverflow = popper.popper.modifiers.find(
+        m => m.name === 'preventOverflow'
+      )
+
+      assert.strictEqual(preventOverflow.enabled, false)
+    })
+
     describe('update', () => {
       it('updates the popper layout', () => {
         const p = genel.p``

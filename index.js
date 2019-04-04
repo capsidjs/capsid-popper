@@ -24,12 +24,34 @@ exports.install = (capsid, { name } = {}) => {
       this.init()
     }
 
+    parseJSON(json, propertyName) {
+      if (!json) {
+        return null
+      }
+
+      try {
+        return JSON.parse(json)
+      } catch (e) {
+        console.warn(
+          `Warning(capsid-popper): Can not parse the given json at ${propertyName}: ${json}`
+        )
+        return null
+      }
+    }
+
     init() {
-      const { popperRef, popperPlacement } = this.el.dataset
+      const {
+        popperRef,
+        popperPlacement,
+        popperPreventOverflow
+      } = this.el.dataset
 
       const parent = this.el.parentElement || document
-
       const ref = parent.querySelector(popperRef)
+      const preventOverflow = this.parseJSON(
+        popperPreventOverflow,
+        'data-popper-prevent-over-flow'
+      )
 
       if (!ref) {
         throw new Error(
@@ -44,7 +66,8 @@ exports.install = (capsid, { name } = {}) => {
       }
 
       this.popper = new Popper(ref, this.el, {
-        placement: popperPlacement
+        placement: popperPlacement,
+        modifiers: { preventOverflow }
       })
 
       if (this.el.style.display === 'none') {
