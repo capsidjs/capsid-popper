@@ -42,7 +42,7 @@
     "capsid": "^0.29.1",
     "codecov": "^3.0.0",
     "genel": "^1.1.1",
-    "husky": "^2.0.0",
+    "husky": "^3.0.0",
     "karma": "^4.0.1",
     "karma-browserify": "^6.0.0",
     "karma-chrome-launcher": "^2.2.0",
