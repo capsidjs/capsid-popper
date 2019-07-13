@@ -45,7 +45,7 @@
     "husky": "^3.0.0",
     "karma": "^4.0.1",
     "karma-browserify": "^6.0.0",
-    "karma-chrome-launcher": "^2.2.0",
+    "karma-chrome-launcher": "^3.0.0",
     "karma-coverage": "^1.1.1",
     "karma-kocha": "^1.9.1",
     "kocha": "^1.9.1",
